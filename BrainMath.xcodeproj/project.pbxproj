@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB2049BE2A29954F006F816C /* BrainMathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2049BD2A29954F006F816C /* BrainMathApp.swift */; };
-		EB2049C02A29954F006F816C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2049BF2A29954F006F816C /* ContentView.swift */; };
+		EB2049C02A29954F006F816C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2049BF2A29954F006F816C /* HomeView.swift */; };
 		EB2049C22A299551006F816C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2049C12A299551006F816C /* Assets.xcassets */; };
 		EB2049C52A299551006F816C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2049C42A299551006F816C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		EB2049BA2A29954F006F816C /* BrainMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2049BD2A29954F006F816C /* BrainMathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMathApp.swift; sourceTree = "<group>"; };
-		EB2049BF2A29954F006F816C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EB2049BF2A29954F006F816C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB2049C12A299551006F816C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB2049C42A299551006F816C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +51,8 @@
 		EB2049BC2A29954F006F816C /* BrainMath */ = {
 			isa = PBXGroup;
 			children = (
+				EBC171D42A2C0EB300B071D4 /* Views */,
 				EB2049BD2A29954F006F816C /* BrainMathApp.swift */,
-				EB2049BF2A29954F006F816C /* ContentView.swift */,
 				EB2049C12A299551006F816C /* Assets.xcassets */,
 				EB2049C32A299551006F816C /* Preview Content */,
 			);
@@ -65,6 +65,14 @@
 				EB2049C42A299551006F816C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBC171D42A2C0EB300B071D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB2049BF2A29954F006F816C /* HomeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2049C02A29954F006F816C /* ContentView.swift in Sources */,
+				EB2049C02A29954F006F816C /* HomeView.swift in Sources */,
 				EB2049BE2A29954F006F816C /* BrainMathApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,8 +281,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,8 +310,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
