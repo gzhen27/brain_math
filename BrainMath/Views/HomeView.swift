@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct HomeView: View {
+    let tintGradient = Gradient(colors: [.pink, .red])
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            TrainView()
+            .tabItem {
+                Label("Train", systemImage: "graduationcap.circle")
+            }
+            QuestView()
+            .tabItem {
+                Label("Quest", systemImage: "trophy.circle")
+            }
+            SettingView()
+            .tabItem {
+                Label("Setting", systemImage: "gearshape.2")
+            }
         }
-        .padding()
+        .tint(.accentColor)
     }
 }
 
