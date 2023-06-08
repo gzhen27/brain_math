@@ -8,24 +8,31 @@
 import SwiftUI
 
 struct HomeView: View {
-    let tintGradient = Gradient(colors: [.pink, .red])
-    
     var body: some View {
         TabView {
             TrainView()
+                .background(CustomColor.backgroundColor)
             .tabItem {
                 Label("Train", systemImage: "graduationcap.circle")
+                    .environment(\.symbolVariants, .none)
             }
             QuestView()
+            .background(CustomColor.backgroundColor)
             .tabItem {
                 Label("Quest", systemImage: "trophy.circle")
+                    .environment(\.symbolVariants, .none)
             }
             SettingView()
+            .background(CustomColor.backgroundColor)
             .tabItem {
                 Label("Setting", systemImage: "gearshape.2")
+                    .environment(\.symbolVariants, .none)
             }
         }
-        .tint(.accentColor)
+        .foregroundColor(CustomColor.tintColor)
+        .onAppear {
+            customizeTabViewStyle()
+        }
     }
 }
 
