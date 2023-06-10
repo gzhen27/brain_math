@@ -29,7 +29,6 @@ struct HomeView: View {
                     .environment(\.symbolVariants, .none)
             }
         }
-        .foregroundColor(CustomColor.tintColor)
         .onAppear {
             customizeTabViewStyle()
         }
