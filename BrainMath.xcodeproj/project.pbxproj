@@ -17,6 +17,7 @@
 		EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D52A2C127C00B071D4 /* TrainView.swift */; };
 		EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D72A2C129500B071D4 /* QuestView.swift */; };
 		EBC171DA2A2C12A400B071D4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D92A2C12A400B071D4 /* SettingView.swift */; };
+		EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		EBC171D52A2C127C00B071D4 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		EBC171D72A2C129500B071D4 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		EBC171D92A2C12A400B071D4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModeSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		EB2049BC2A29954F006F816C /* BrainMath */ = {
 			isa = PBXGroup;
 			children = (
+				EBCBBF312A3524D200DCFDAA /* Models */,
 				EBB536732A31476000902BB1 /* Helpers */,
 				EBB536702A31472B00902BB1 /* Assets */,
 				EBC171D42A2C0EB300B071D4 /* Views */,
@@ -107,6 +110,14 @@
 				EBC171D92A2C12A400B071D4 /* SettingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EBCBBF312A3524D200DCFDAA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				EBB536722A31475800902BB1 /* CustomColor.swift in Sources */,
 				EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */,
 				EB2049BE2A29954F006F816C /* BrainMathApp.swift in Sources */,
+				EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */,
 				EBB536782A31524200902BB1 /* UICustomColor.swift in Sources */,
 				EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */,
 			);
