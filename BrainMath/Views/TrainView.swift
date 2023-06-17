@@ -33,10 +33,10 @@ struct TrainView: View {
                     RoundedRectangle(cornerRadius: 6)
                         .stroke(CustomColor.tintColor, lineWidth: 2)
                         .frame(width: 60, height: 60)
-                    Text("999")
+                    Text("9999")
                 }
             }
-            .font(.system(size: 24))
+            .font(.system(size: 21))
             .padding()
             HStack {
                 Image(systemName: "pencil.line")
@@ -52,61 +52,43 @@ struct TrainView: View {
             Grid(horizontalSpacing: 16, verticalSpacing: 16) {
                 GridRow {
                     ForEach(1..<4) { n in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(CustomColor.tintColor, lineWidth: 1)
-                                .frame(width: 60, height: 60)
-                            Text("\(n)")
-                        }
-                        .onTapGesture {
+                        Button {
                             answer += "\(n)"
+                        } label: {
+                            Text("\(n)")
+                                .frame(width: 80,height: 80)
+                                .border(CustomColor.tintColor)
+                                .cornerRadius(8)
                         }
                     }
                 }
                 GridRow {
                     ForEach(4..<7) { n in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(CustomColor.tintColor, lineWidth: 1)
-                                .frame(width: 60, height: 60)
-                            Text("\(n)")
-                        }
-                        .onTapGesture {
+                        Button {
                             answer += "\(n)"
+                        } label: {
+                            Text("\(n)")
+                                .frame(width: 80,height: 80)
+                                .border(CustomColor.tintColor)
+                                .cornerRadius(8)
                         }
                     }
                 }
                 GridRow {
                     ForEach(7..<10) { n in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(CustomColor.tintColor, lineWidth: 1)
-                                .frame(width: 60, height: 60)
-                            Text("\(n)")
-                        }
-                        .onTapGesture {
+                        Button {
                             answer += "\(n)"
+                        } label: {
+                            Text("\(n)")
+                                .frame(width: 80,height: 80)
+                                .border(CustomColor.tintColor)
+                                .cornerRadius(8)
                         }
                     }
                 }
                 GridRow {
                     ForEach(10..<13) { n in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(CustomColor.tintColor, lineWidth: 1)
-                                .frame(width: 60, height: 60)
-                            switch n  {
-                            case 10:
-                                Text("Clear")
-                            case 11:
-                                Text("0")
-                            case 12:
-                                Text("=")
-                            default:
-                                Text("Error")
-                            }
-                        }
-                        .onTapGesture {
+                        Button {
                             switch n  {
                             case 10:
                                 answer = ""
@@ -115,16 +97,48 @@ struct TrainView: View {
                                     answer += "0"
                                 }
                             case 12:
-                                break
-                                //check the answer
+                                if (!answer.isEmpty) {
+                                    answer.removeLast()
+                                }
                             default:
                                 break
+                            }
+                        } label: {
+                            switch n  {
+                            case 10:
+                                Text("Clear")
+                                    .frame(width: 80,height: 80)
+                                    .border(CustomColor.tintColor)
+                                    .cornerRadius(8)
+                            case 11:
+                                Text("0")
+                                    .frame(width: 80,height: 80)
+                                    .border(CustomColor.tintColor)
+                                    .cornerRadius(8)
+                            case 12:
+                                Text("Back")
+                                    .frame(width: 80,height: 80)
+                                    .border(CustomColor.tintColor)
+                                    .cornerRadius(8)
+                            default:
+                                Text("Error")
                             }
                         }
                     }
                 }
             }
             .padding()
+            Spacer()
+            Button {
+                
+            } label: {
+                Text("Check")
+                    .frame(width: 320, height: 60)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(CustomColor.tintColor, lineWidth: 2)
+                    )
+            }
             Spacer()
             Divider()
         }
