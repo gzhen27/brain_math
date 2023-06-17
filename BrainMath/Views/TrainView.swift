@@ -10,12 +10,121 @@ import SwiftUI
 struct TrainView: View {
     @AppStorage("trainModeSetting") var trainModeData = TrainModelSetting().encode()!
     @State private var trainModeSetting = TrainModelSetting()
+    @State private var answer = ""
     
     var body: some View {
         VStack {
-            Spacer()
-            Text("Train View")
-            Text("\(trainModeSetting.maxValue)")
+            HStack(alignment: .center) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(CustomColor.tintColor, lineWidth: 2)
+                        .frame(width: 60, height: 60)
+                    Text("5")
+                }
+                Text(" X ")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(CustomColor.tintColor, lineWidth: 2)
+                        .frame(width: 60, height: 60)
+                    Text("?")
+                }
+                Text(" = ")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(CustomColor.tintColor, lineWidth: 2)
+                        .frame(width: 60, height: 60)
+                    Text("999")
+                }
+            }
+            .font(.system(size: 24))
+            .padding()
+            HStack {
+                Image(systemName: "pencil.line")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+                TextField("answer", text: $answer)
+                    .disabled(true)
+            }
+            .frame(width: 280)
+            .padding()
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(.gray, lineWidth: 1))
+            .padding()
+            Grid(horizontalSpacing: 16, verticalSpacing: 16) {
+                GridRow {
+                    ForEach(1..<4) { n in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(CustomColor.tintColor, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                            Text("\(n)")
+                        }
+                        .onTapGesture {
+                            answer += "\(n)"
+                        }
+                    }
+                }
+                GridRow {
+                    ForEach(4..<7) { n in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(CustomColor.tintColor, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                            Text("\(n)")
+                        }
+                        .onTapGesture {
+                            answer += "\(n)"
+                        }
+                    }
+                }
+                GridRow {
+                    ForEach(7..<10) { n in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(CustomColor.tintColor, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                            Text("\(n)")
+                        }
+                        .onTapGesture {
+                            answer += "\(n)"
+                        }
+                    }
+                }
+                GridRow {
+                    ForEach(10..<13) { n in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(CustomColor.tintColor, lineWidth: 1)
+                                .frame(width: 60, height: 60)
+                            switch n  {
+                            case 10:
+                                Text("Clear")
+                            case 11:
+                                Text("0")
+                            case 12:
+                                Text("=")
+                            default:
+                                Text("Error")
+                            }
+                        }
+                        .onTapGesture {
+                            switch n  {
+                            case 10:
+                                answer = ""
+                            case 11:
+                                if (!answer.isEmpty) {
+                                    answer += "0"
+                                }
+                            case 12:
+                                break
+                                //check the answer
+                            default:
+                                break
+                            }
+                        }
+                    }
+                }
+            }
+            .padding()
             Spacer()
             Divider()
         }
@@ -24,6 +133,7 @@ struct TrainView: View {
                 trainModeSetting = setting
             }
         }
+        .padding(.horizontal)
     }
 }
 
