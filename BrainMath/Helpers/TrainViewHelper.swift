@@ -41,13 +41,13 @@ func displayUserInput(_ input: String) -> some View {
             .opacity(input.isEmpty ? 0.4 : 1)
         Spacer()
     }
-    .frame(width: 280)
     .padding()
     .overlay(
         RoundedRectangle(cornerRadius: 4)
             .stroke(Color.gray, lineWidth: 1)
             .frame(height: 50)
     )
+    .frame(width: 320)
 }
 
 func createKeyboard(height: CGFloat, result: Binding<String>) -> some View {
