@@ -15,7 +15,7 @@ struct TrainView: View {
     var body: some View {
         GeometryReader { geo in
             VStack {
-                displayQuestion(x: "5", y: "?", answer: "9999", type: "+")
+                displayQuestion(operation: .subtraction)
                     .padding(.vertical)
                 displayUserInput(answer)
                 Spacer()

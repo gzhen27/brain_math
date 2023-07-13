@@ -11,6 +11,7 @@
 		EB2049C02A29954F006F816C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2049BF2A29954F006F816C /* HomeView.swift */; };
 		EB2049C22A299551006F816C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2049C12A299551006F816C /* Assets.xcassets */; };
 		EB2049C52A299551006F816C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2049C42A299551006F816C /* Preview Assets.xcassets */; };
+		EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A013F2A60855200B69254 /* MathQuestion.swift */; };
 		EB4E12C02A409FE000EAAE49 /* TrainViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4E12BF2A409FE000EAAE49 /* TrainViewHelper.swift */; };
 		EBB536722A31475800902BB1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536712A31475800902BB1 /* CustomColor.swift */; };
 		EBB536752A31477100902BB1 /* TabViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536742A31477100902BB1 /* TabViewHelper.swift */; };
@@ -27,6 +28,7 @@
 		EB2049BF2A29954F006F816C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EB2049C12A299551006F816C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB2049C42A299551006F816C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EB4A013F2A60855200B69254 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
 		EB4E12BF2A409FE000EAAE49 /* TrainViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewHelper.swift; sourceTree = "<group>"; };
 		EBB536712A31475800902BB1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		EBB536742A31477100902BB1 /* TabViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHelper.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */,
+				EB4A013F2A60855200B69254 /* MathQuestion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */,
 				EB4E12C02A409FE000EAAE49 /* TrainViewHelper.swift in Sources */,
 				EBB536782A31524200902BB1 /* UICustomColor.swift in Sources */,
+				EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */,
 				EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

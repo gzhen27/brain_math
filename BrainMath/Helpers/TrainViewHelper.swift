@@ -7,27 +7,47 @@
 
 import SwiftUI
 
-func displayQuestion(x: String, y: String, answer: String, type: String) -> some View {
+func generateInteger(limit: Int) -> Int {
+    return Int.random(in: 0...limit)
+}
+
+func generateAnswer(first: Int, second: Int, operation: MathOperation) -> Int {
+    switch operation {
+    case .addition:
+        return first + second
+    case .subtraction:
+        return first - second
+    case .multiplication:
+        return first * second
+    case .division:
+        return first / second
+    }
+}
+
+func displayQuestion(operation: MathOperation) -> some View {
+    
+    let question = MathQuestion(operation: operation)
+    
     return HStack(alignment: .center) {
         ZStack {
             RoundedRectangle(cornerRadius: 6)
                 .stroke(CustomColor.tintColor, lineWidth: 2)
                 .frame(width: 60, height: 60)
-            Text("\(x)")
+            Text("\(question.first)")
         }
-        Text(" \(type) ")
+        Text(" \(question.operation.rawValue) ")
         ZStack {
             RoundedRectangle(cornerRadius: 6)
                 .stroke(CustomColor.tintColor, lineWidth: 2)
                 .frame(width: 60, height: 60)
-            Text("\(y)")
+            Text("\(question.second)")
         }
         Text(" = ")
         ZStack {
             RoundedRectangle(cornerRadius: 6)
                 .stroke(CustomColor.tintColor, lineWidth: 2)
                 .frame(width: 60, height: 60)
-            Text("\(answer)")
+            Text("\(question.answer)")
         }
     }
 }
