@@ -9,10 +9,12 @@ import SwiftUI
 
 struct SkipBtnView: View {
     @Binding var question: MathQuestion
+    @Binding var answer: String
     
     var body: some View {
         return Button {
             question = MathQuestion(operation: .multiplication)
+            answer = ""
         } label: {
             Text("Skip")
                 .frame(width: 320, height: 50)
@@ -26,6 +28,6 @@ struct SkipBtnView: View {
 
 struct SkipBtnView_Previews: PreviewProvider {
     static var previews: some View {
-        SkipBtnView(question: .constant(MathQuestion(operation: .multiplication)))
+        SkipBtnView(question: .constant(MathQuestion(operation: .multiplication)), answer: .constant("0"))
     }
 }

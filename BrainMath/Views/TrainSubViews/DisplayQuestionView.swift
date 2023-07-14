@@ -16,21 +16,21 @@ struct DisplayQuestionView: View {
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(CustomColor.tintColor, lineWidth: 2)
                     .frame(width: 60, height: 60)
-                Text("\(question.first)")
+                Text("\(question.firstText)")
             }
             Text(" \(question.operation.rawValue) ")
             ZStack {
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(CustomColor.tintColor, lineWidth: 2)
                     .frame(width: 60, height: 60)
-                Text("\(question.second)")
+                Text("\(question.secondText)")
             }
             Text(" = ")
             ZStack {
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(CustomColor.tintColor, lineWidth: 2)
                     .frame(width: 60, height: 60)
-                Text("\(question.answer)")
+                Text("\(question.answerText)")
             }
         }
     }

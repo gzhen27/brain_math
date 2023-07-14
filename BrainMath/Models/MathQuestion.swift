@@ -12,10 +12,37 @@ struct MathQuestion {
     let second: Int
     let answer: Int
     let operation: MathOperation
+    let hiddenIndex: Int
+    
+    var firstText: String {
+        hiddenIndex == 0 ? "?" : "\(first)"
+    }
+    
+    var secondText: String {
+        hiddenIndex == 1 ? "?" : "\(second)"
+    }
+    
+    var answerText: String {
+        hiddenIndex == 2 ? "?" : "\(answer)"
+    }
+    
+    var hiddenValue: String {
+        switch hiddenIndex {
+        case 0:
+            return "\(first)"
+        case 1:
+            return "\(second)"
+        case 2:
+            return "\(answer)"
+        default:
+            return "Error"
+        }
+    }
     
     init(operation: MathOperation) {
-        self.first = MathQuestion.generateInteger(limit: 100)
-        self.second = MathQuestion.generateInteger(limit: 100)
+        self.first = MathQuestion.generateInteger(limit: 20)
+        self.second = MathQuestion.generateInteger(limit: 20)
+        self.hiddenIndex = MathQuestion.generateInteger(limit: 2)
         self.answer = MathQuestion.generateAnswer(first: first, second: second, operation: operation)
         self.operation = operation
     }

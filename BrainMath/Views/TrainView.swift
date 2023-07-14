@@ -15,10 +15,10 @@ struct TrainView: View {
     private var trainModeSetting = TrainModelSetting()
     
     @State
-    private var answer = ""
+    private var question = MathQuestion(operation: .multiplication)
     
     @State
-    private var question = MathQuestion(operation: .multiplication)
+    private var answer = ""
     
     
     var body: some View {
@@ -26,10 +26,11 @@ struct TrainView: View {
             VStack {
                 DisplayQuestionView(question: question)
                 AnswerInputView(answer: answer)
+                Text(question.hiddenValue)
                 Spacer()
                 KeyboardView(answer: $answer, height: geo.size.height*0.4)
                 Spacer()
-                SkipBtnView(question: $question)
+                SkipBtnView(question: $question, answer: $answer)
                 ZStack {
                     Rectangle()
                         .stroke(CustomColor.tintColor, lineWidth: 1)
