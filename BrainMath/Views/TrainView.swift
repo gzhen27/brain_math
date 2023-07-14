@@ -25,10 +25,11 @@ struct TrainView: View {
         GeometryReader { geo in
             VStack {
                 DisplayQuestionView(question: question)
+                    .padding(.top)
                 AnswerInputView(answer: answer)
                 Text(question.hiddenValue)
                 Spacer()
-                KeyboardView(answer: $answer, height: geo.size.height*0.4)
+                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4)
                 Spacer()
                 SkipBtnView(question: $question, answer: $answer)
                 ZStack {

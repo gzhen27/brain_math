@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct GridRowVariantView: View {
-    @Binding var answer: String
+    @Binding
+    var question: MathQuestion
+    
+    @Binding
+    var answer: String
     
     let from: Int
     let to: Int
@@ -24,6 +28,10 @@ struct GridRowVariantView: View {
                     case 11:
                         if (answer != "0") {
                             answer += "0"
+                            if answer == question.hiddenValue {
+                                question = MathQuestion(operation: .multiplication)
+                                answer = ""
+                            }
                         }
                     case 12:
                         if (!answer.isEmpty) {
@@ -57,6 +65,6 @@ struct GridRowVariantView: View {
 
 struct GridRowVariantView_Previews: PreviewProvider {
     static var previews: some View {
-        GridRowVariantView(answer: .constant("123"), from: 10, to: 12, length: 20)
+        GridRowVariantView(question: .constant(MathQuestion(operation: .multiplication)), answer: .constant("123"), from: 10, to: 12, length: 20)
     }
 }

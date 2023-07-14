@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct GridRowView: View {
-    @Binding var answer: String
+    @Binding
+    var question: MathQuestion
+    
+    @Binding
+    var answer: String
     
     let from: Int
     let to: Int
@@ -22,6 +26,10 @@ struct GridRowView: View {
                         answer = ""
                     }
                     answer += "\(n)"
+                    if answer == question.hiddenValue {
+                        question = MathQuestion(operation: .multiplication)
+                        answer = ""
+                    }
                 } label: {
                     Text("\(n)")
                         .frame(width: length, height: length)
@@ -34,6 +42,6 @@ struct GridRowView: View {
 
 struct GridRowView_Previews: PreviewProvider {
     static var previews: some View {
-        GridRowView(answer: .constant("123"), from: 0, to: 0, length: 20)
+        GridRowView(question: .constant(MathQuestion(operation: .multiplication)), answer: .constant("123"), from: 0, to: 0, length: 20)
     }
 }

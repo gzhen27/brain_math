@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct SkipBtnView: View {
-    @Binding var question: MathQuestion
-    @Binding var answer: String
+    @Binding
+    var question: MathQuestion
+    
+    @Binding
+    var answer: String
     
     var body: some View {
         return Button {
