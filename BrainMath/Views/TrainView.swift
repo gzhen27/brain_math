@@ -8,20 +8,28 @@
 import SwiftUI
 
 struct TrainView: View {
-    @AppStorage("trainModeSetting") var trainModeData = TrainModelSetting().encode()!
-    @State private var trainModeSetting = TrainModelSetting()
-    @State private var answer = ""
+    @AppStorage("trainModeSetting")
+    var trainModeData = TrainModelSetting().encode()!
+    
+    @State
+    private var trainModeSetting = TrainModelSetting()
+    
+    @State
+    private var answer = ""
+    
+    @State
+    private var question = MathQuestion(operation: .multiplication)
+    
     
     var body: some View {
         GeometryReader { geo in
             VStack {
-                displayQuestion(operation: .subtraction)
-                    .padding(.vertical)
-                displayUserInput(answer)
+                DisplayQuestionView(question: question)
+                AnswerInputView(answer: answer)
                 Spacer()
-                createKeyboard(height: geo.size.height*0.4, result: $answer)
+                KeyboardView(answer: $answer, height: geo.size.height*0.4)
                 Spacer()
-                displaySkipBtn()
+                SkipBtnView(question: $question)
                 ZStack {
                     Rectangle()
                         .stroke(CustomColor.tintColor, lineWidth: 1)
