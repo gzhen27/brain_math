@@ -20,7 +20,6 @@ struct TrainView: View {
     @State
     private var answer = ""
     
-    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -29,9 +28,9 @@ struct TrainView: View {
                 AnswerInputView(answer: answer)
                 Text(question.hiddenValue)
                 Spacer()
-                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4)
+                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4, maxValue: trainModeSetting.maxValue)
                 Spacer()
-                SkipBtnView(question: $question, answer: $answer)
+                SkipBtnView(question: $question, answer: $answer, maxValue: trainModeSetting.maxValue)
                 ZStack {
                     Rectangle()
                         .stroke(CustomColor.tintColor, lineWidth: 1)
@@ -45,6 +44,7 @@ struct TrainView: View {
         .onAppear {
             if let setting = TrainModelSetting.decode(data: trainModeData) {
                 trainModeSetting = setting
+                question = MathQuestion(operation: .multiplication, maxValue: setting.maxValue)
             }
         }
     }

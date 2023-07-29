@@ -17,6 +17,7 @@ struct GridRowVariantView: View {
     let from: Int
     let to: Int
     let length: CGFloat
+    let maxValue: Int
     
     var body: some View {
         GridRow {
@@ -29,7 +30,7 @@ struct GridRowVariantView: View {
                         if (answer != "0") {
                             answer += "0"
                             if answer == question.hiddenValue {
-                                question = MathQuestion(operation: .multiplication)
+                                question = MathQuestion(operation: .multiplication, maxValue: maxValue)
                                 answer = ""
                             }
                         }
@@ -65,6 +66,6 @@ struct GridRowVariantView: View {
 
 struct GridRowVariantView_Previews: PreviewProvider {
     static var previews: some View {
-        GridRowVariantView(question: .constant(MathQuestion(operation: .multiplication)), answer: .constant("123"), from: 10, to: 12, length: 20)
+        GridRowVariantView(question: .constant(MathQuestion(operation: .multiplication, maxValue: 10)), answer: .constant("123"), from: 10, to: 12, length: 20, maxValue: 10)
     }
 }

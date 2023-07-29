@@ -11,8 +11,8 @@ struct MathQuestion {
     let first: Int
     let second: Int
     let answer: Int
-    let operation: MathOperation
     let hiddenIndex: Int
+    let operation: MathOperation
     
     var firstText: String {
         hiddenIndex == 0 ? "?" : "\(first)"
@@ -39,9 +39,9 @@ struct MathQuestion {
         }
     }
     
-    init(operation: MathOperation) {
-        self.first = MathQuestion.generateInteger(limit: 20)
-        self.second = MathQuestion.generateInteger(limit: 20)
+    init(operation: MathOperation, maxValue: Int = 5) {
+        self.first = MathQuestion.generateInteger(limit: maxValue)
+        self.second = MathQuestion.generateInteger(limit: maxValue)
         self.hiddenIndex = MathQuestion.generateInteger(limit: 2)
         self.answer = MathQuestion.generateAnswer(first: first, second: second, operation: operation)
         self.operation = operation

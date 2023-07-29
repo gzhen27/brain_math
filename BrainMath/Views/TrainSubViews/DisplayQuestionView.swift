@@ -38,6 +38,6 @@ struct DisplayQuestionView: View {
 
 struct DisplayQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        DisplayQuestionView(question: MathQuestion(operation: .multiplication))
+        DisplayQuestionView(question: MathQuestion(operation: .multiplication, maxValue: 10))
     }
 }

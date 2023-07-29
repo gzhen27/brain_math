@@ -17,6 +17,7 @@ struct GridRowView: View {
     let from: Int
     let to: Int
     let length: CGFloat
+    let maxValue: Int
     
     var body: some View {
         return GridRow {
@@ -27,7 +28,7 @@ struct GridRowView: View {
                     }
                     answer += "\(n)"
                     if answer == question.hiddenValue {
-                        question = MathQuestion(operation: .multiplication)
+                        question = MathQuestion(operation: .multiplication, maxValue: maxValue)
                         answer = ""
                     }
                 } label: {
@@ -42,6 +43,6 @@ struct GridRowView: View {
 
 struct GridRowView_Previews: PreviewProvider {
     static var previews: some View {
-        GridRowView(question: .constant(MathQuestion(operation: .multiplication)), answer: .constant("123"), from: 0, to: 0, length: 20)
+        GridRowView(question: .constant(MathQuestion(operation: .multiplication, maxValue: 10)), answer: .constant("123"), from: 0, to: 0, length: 20, maxValue: 10)
     }
 }

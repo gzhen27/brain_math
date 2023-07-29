@@ -19,6 +19,17 @@ struct SettingView: View {
                     Text("Max: \(trainModeSetting.maxValue)")
                 }
                 Divider()
+            } header: {
+                Text("Train Mode")
+                    .font(.headline)
+            }
+            .padding(.bottom)
+            Spacer()
+            Section {
+                Text("Quest Mode Setting")
+            } header: {
+                Text("Quest Mode")
+                    .font(.headline)
             }
             Spacer()
             saveBtn
