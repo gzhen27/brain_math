@@ -8,28 +8,22 @@
 import SwiftUI
 
 struct SettingView: View {
-    @AppStorage("trainModeSetting") var trainModeData = TrainModelSetting().encode()!
-    @State private var trainModeSetting = TrainModelSetting()
-    @State private var showError = false
+    @AppStorage("trainModeSetting")
+    var trainModeData = TrainModelSetting().encode()!
+    
+    @State
+    private var trainModeSetting = TrainModelSetting()
+    
+    @State
+    private var showError = false
     
     var body: some View {
         VStack {
-            Section {
-                Stepper(value: $trainModeSetting.maxValue, in: 5...100, step: 5) {
-                    Text("Max: \(trainModeSetting.maxValue)")
-                }
-                Divider()
-            } header: {
-                Text("Train Mode")
-                    .font(.headline)
-            }
-            .padding(.bottom)
-            Spacer()
-            Section {
-                Text("Quest Mode Setting")
-            } header: {
-                Text("Quest Mode")
-                    .font(.headline)
+            VStack {
+                SettingComponentView(isToggle: $trainModeSetting.isMultiplication, maxValue: $trainModeSetting.multiplicationMax, text: "Multiplication")
+                SettingComponentView(isToggle: $trainModeSetting.isDivision, maxValue: $trainModeSetting.divisionMax, text: "Division")
+                SettingComponentView(isToggle: $trainModeSetting.isAddition, maxValue: $trainModeSetting.additionMax, text: "Addition")
+                SettingComponentView(isToggle: $trainModeSetting.isSubstraction, maxValue: $trainModeSetting.substractionMax, text: "Substraction")
             }
             Spacer()
             saveBtn
@@ -43,7 +37,6 @@ struct SettingView: View {
         .alert("Error", isPresented: $showError, actions: {}) {
             Text("Failed to save the settings, please try again")
         }
-
     }
     
     private var saveBtn: some View {

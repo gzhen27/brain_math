@@ -8,7 +8,15 @@
 import Foundation
 
 struct TrainModelSetting: Codable {
-    var maxValue: Int = 5
+    var isMultiplication: Bool = true
+    var isDivision: Bool = false
+    var isAddition: Bool = false
+    var isSubstraction: Bool = false
+    
+    var multiplicationMax: Int = 5
+    var divisionMax: Int = 5
+    var additionMax: Int = 100
+    var substractionMax: Int = 100
     
     func encode() -> Data? {
         let encoder = JSONEncoder()

@@ -28,9 +28,9 @@ struct TrainView: View {
                 AnswerInputView(answer: answer)
                 Text(question.hiddenValue)
                 Spacer()
-                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4, maxValue: trainModeSetting.maxValue)
+                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4, maxValue: trainModeSetting.multiplicationMax)
                 Spacer()
-                SkipBtnView(question: $question, answer: $answer, maxValue: trainModeSetting.maxValue)
+                SkipBtnView(question: $question, answer: $answer, maxValue: trainModeSetting.multiplicationMax)
                 ZStack {
                     Rectangle()
                         .stroke(CustomColor.tintColor, lineWidth: 1)
@@ -44,7 +44,7 @@ struct TrainView: View {
         .onAppear {
             if let setting = TrainModelSetting.decode(data: trainModeData) {
                 trainModeSetting = setting
-                question = MathQuestion(operation: .multiplication, maxValue: setting.maxValue)
+                question = MathQuestion(operation: .multiplication, maxValue: setting.multiplicationMax)
             }
         }
     }
