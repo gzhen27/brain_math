@@ -20,6 +20,9 @@ struct TrainView: View {
     @State
     private var answer = ""
     
+    @State
+    private var isFirstLoad = true
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -44,8 +47,15 @@ struct TrainView: View {
         .onAppear {
             if let settings = QuestionSettings.decode(data: settingsData) {
                 self.settings = settings
-                question = MathQuestion()
-                question.refresh(settings: settings)
+                if isFirstLoad || settings.hasChanged {
+                    question = MathQuestion()
+                    question.refresh(settings: settings)
+                    isFirstLoad = false
+                    self.settings.hasChanged = false
+                    if let settingsData = self.settings.encode() {
+                        self.settingsData = settingsData
+                    }
+                }
             }
         }
     }

@@ -18,6 +18,8 @@ struct QuestionSettings: Codable {
     var additionMax: Int = 100
     var substractionMax: Int = 100
     
+    var hasChanged: Bool = false
+    
     func encode() -> Data? {
         let encoder = JSONEncoder()
         if let encodedValue = try? encoder.encode(self) {

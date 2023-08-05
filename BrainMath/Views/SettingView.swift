@@ -41,6 +41,7 @@ struct SettingView: View {
     
     private var saveBtn: some View {
         Button {
+            trainModeSetting.hasChanged = true
             if let settingData = trainModeSetting.encode() {
                 trainModeData = settingData
             } else {
