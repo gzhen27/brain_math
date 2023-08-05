@@ -9,10 +9,10 @@ import SwiftUI
 
 struct SettingView: View {
     @AppStorage("trainModeSetting")
-    var trainModeData = TrainModelSetting().encode()!
+    var trainModeData = QuestionSettings().encode()!
     
     @State
-    private var trainModeSetting = TrainModelSetting()
+    private var trainModeSetting = QuestionSettings()
     
     @State
     private var showError = false
@@ -30,7 +30,7 @@ struct SettingView: View {
         }
         .padding(.horizontal)
         .onAppear {
-            if let setting = TrainModelSetting.decode(data: trainModeData) {
+            if let setting = QuestionSettings.decode(data: trainModeData) {
                 trainModeSetting = setting
             }
         }
