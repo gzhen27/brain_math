@@ -1,5 +1,5 @@
 //
-//  TrainModelSetting.swift
+//  QuestionSettings.swift
 //  BrainMath
 //
 //  Created by G Zhen on 6/10/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrainModelSetting: Codable {
+struct QuestionSettings: Codable {
     var isMultiplication: Bool = true
     var isDivision: Bool = false
     var isAddition: Bool = false
@@ -27,9 +27,9 @@ struct TrainModelSetting: Codable {
         }
     }
     
-    static func decode(data: Data) -> TrainModelSetting? {
+    static func decode(data: Data) -> QuestionSettings? {
         let decoder = JSONDecoder()
-        if let setting = try? decoder.decode(TrainModelSetting.self, from: data) {
+        if let setting = try? decoder.decode(QuestionSettings.self, from: data) {
             return setting
         } else {
             return nil
