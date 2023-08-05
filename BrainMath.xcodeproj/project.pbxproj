@@ -18,6 +18,7 @@
 		EB4933982A61D41100D692BA /* GridRowVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4933972A61D41100D692BA /* GridRowVariantView.swift */; };
 		EB49339B2A61D4EC00D692BA /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49339A2A61D4EC00D692BA /* KeyboardView.swift */; };
 		EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A013F2A60855200B69254 /* MathQuestion.swift */; };
+		EB5795272A7F14E6004CED30 /* BugsTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5795262A7F14E6004CED30 /* BugsTrackList.swift */; };
 		EB9AE0BF2A79E62D0034FDA9 /* SettingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */; };
 		EBB536722A31475800902BB1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536712A31475800902BB1 /* CustomColor.swift */; };
 		EBB536752A31477100902BB1 /* TabViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536742A31477100902BB1 /* TabViewHelper.swift */; };
@@ -41,6 +42,7 @@
 		EB4933972A61D41100D692BA /* GridRowVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowVariantView.swift; sourceTree = "<group>"; };
 		EB49339A2A61D4EC00D692BA /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		EB4A013F2A60855200B69254 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
+		EB5795262A7F14E6004CED30 /* BugsTrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsTrackList.swift; sourceTree = "<group>"; };
 		EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponentView.swift; sourceTree = "<group>"; };
 		EBB536712A31475800902BB1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		EBB536742A31477100902BB1 /* TabViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHelper.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				EB2049BD2A29954F006F816C /* BrainMathApp.swift */,
 				EB2049C12A299551006F816C /* Assets.xcassets */,
 				EB2049C32A299551006F816C /* Preview Content */,
+				EB5795262A7F14E6004CED30 /* BugsTrackList.swift */,
 			);
 			path = BrainMath;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */,
 				EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */,
 				EB49339B2A61D4EC00D692BA /* KeyboardView.swift in Sources */,
+				EB5795272A7F14E6004CED30 /* BugsTrackList.swift in Sources */,
 				EB4933942A61D27800D692BA /* SkipBtnView.swift in Sources */,
 				EB9AE0BF2A79E62D0034FDA9 /* SettingComponentView.swift in Sources */,
 				EB4933912A61D0FA00D692BA /* AnswerInputView.swift in Sources */,

@@ -94,7 +94,8 @@ extension MathQuestion {
         if settings.isDivision { operations.append(.division) }
         if settings.isAddition { operations.append(.addition) }
         if settings.isSubstraction { operations.append(.subtraction) }
-        return operations
+        //BUG: - to avoid the the operations are all disabled until the bug is fixed.
+        return operations.count > 0 ? operations : [.multiplication]
     }
     
     private func getMaxValue(settings: QuestionSettings, operation: MathOperation) -> Int {
