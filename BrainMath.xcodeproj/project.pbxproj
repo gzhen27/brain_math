@@ -25,7 +25,7 @@
 		EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D52A2C127C00B071D4 /* TrainView.swift */; };
 		EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D72A2C129500B071D4 /* QuestView.swift */; };
 		EBC171DA2A2C12A400B071D4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D92A2C12A400B071D4 /* SettingView.swift */; };
-		EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */; };
+		EBCBBF332A3524FB00DCFDAA /* QuestionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 		EBC171D52A2C127C00B071D4 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		EBC171D72A2C129500B071D4 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		EBC171D92A2C12A400B071D4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModeSetting.swift; sourceTree = "<group>"; };
+		EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		EBCBBF312A3524D200DCFDAA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */,
+				EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */,
 				EB4A013F2A60855200B69254 /* MathQuestion.swift */,
 			);
 			path = Models;
@@ -238,7 +238,7 @@
 				EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */,
 				EB49338F2A61CD4C00D692BA /* DisplayQuestionView.swift in Sources */,
 				EB2049BE2A29954F006F816C /* BrainMathApp.swift in Sources */,
-				EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */,
+				EBCBBF332A3524FB00DCFDAA /* QuestionSettings.swift in Sources */,
 				EB4933962A61D31400D692BA /* GridRowView.swift in Sources */,
 				EBB536782A31524200902BB1 /* UICustomColor.swift in Sources */,
 				EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */,
