@@ -14,11 +14,11 @@ struct SkipBtnView: View {
     @Binding
     var answer: String
     
-    let maxValue: Int
+    let settings: QuestionSettings
     
     var body: some View {
         return Button {
-            question = MathQuestion(operation: .multiplication, maxValue: maxValue)
+            question.refresh(settings: settings)
             answer = ""
         } label: {
             Text("Skip")
@@ -33,6 +33,6 @@ struct SkipBtnView: View {
 
 struct SkipBtnView_Previews: PreviewProvider {
     static var previews: some View {
-        SkipBtnView(question: .constant(MathQuestion(operation: .multiplication, maxValue: 10)), answer: .constant("0"), maxValue: 10)
+        SkipBtnView(question: .constant(MathQuestion()), answer: .constant("0"), settings: QuestionSettings())
     }
 }

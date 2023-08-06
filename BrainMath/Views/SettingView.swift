@@ -8,46 +8,44 @@
 import SwiftUI
 
 struct SettingView: View {
-    @AppStorage("trainModeSetting") var trainModeData = TrainModelSetting().encode()!
-    @State private var trainModeSetting = TrainModelSetting()
-    @State private var showError = false
+    @AppStorage("trainModeSetting")
+    var trainModeData = QuestionSettings().encode()!
+    
+    @State
+    private var trainModeSetting = QuestionSettings()
+    
+    @State
+    private var showError = false
     
     var body: some View {
         VStack {
-            Section {
-                Stepper(value: $trainModeSetting.maxValue, in: 5...100, step: 5) {
-                    Text("Max: \(trainModeSetting.maxValue)")
-                }
-                Divider()
-            } header: {
-                Text("Train Mode")
-                    .font(.headline)
-            }
-            .padding(.bottom)
-            Spacer()
-            Section {
-                Text("Quest Mode Setting")
-            } header: {
-                Text("Quest Mode")
-                    .font(.headline)
+            VStack {
+                SettingComponentView(isToggle: $trainModeSetting.isMultiplication, limit: $trainModeSetting.multiplicationMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .multiplication)
+                SettingComponentView(isToggle: $trainModeSetting.isDivision, limit: $trainModeSetting.divisionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .division)
+                SettingComponentView(isToggle: $trainModeSetting.isAddition, limit: $trainModeSetting.additionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .addition)
+                SettingComponentView(isToggle: $trainModeSetting.isSubstraction, limit: $trainModeSetting.substractionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .subtraction)
             }
             Spacer()
             saveBtn
         }
         .padding(.horizontal)
         .onAppear {
-            if let setting = TrainModelSetting.decode(data: trainModeData) {
+            if let setting = QuestionSettings.decode(data: trainModeData) {
                 trainModeSetting = setting
             }
         }
         .alert("Error", isPresented: $showError, actions: {}) {
             Text("Failed to save the settings, please try again")
         }
-
     }
     
     private var saveBtn: some View {
         Button {
+            trainModeSetting.hasChanged = true
             if let settingData = trainModeSetting.encode() {
                 trainModeData = settingData
             } else {

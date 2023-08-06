@@ -9,16 +9,19 @@ import SwiftUI
 
 struct TrainView: View {
     @AppStorage("trainModeSetting")
-    var trainModeData = TrainModelSetting().encode()!
+    var settingsData = QuestionSettings().encode()!
     
     @State
-    private var trainModeSetting = TrainModelSetting()
+    private var settings = QuestionSettings()
     
     @State
-    private var question = MathQuestion(operation: .multiplication)
+    private var question = MathQuestion()
     
     @State
     private var answer = ""
+    
+    @State
+    private var isFirstLoad = true
     
     var body: some View {
         GeometryReader { geo in
@@ -26,11 +29,11 @@ struct TrainView: View {
                 DisplayQuestionView(question: question)
                     .padding(.top)
                 AnswerInputView(answer: answer)
-                Text(question.hiddenValue)
+                Text(question.questionDescription)
                 Spacer()
-                KeyboardView(question: $question, answer: $answer, height: geo.size.height*0.4, maxValue: trainModeSetting.maxValue)
+                KeyboardView(question: $question, answer: $answer, settings: settings, height: geo.size.height*0.4)
                 Spacer()
-                SkipBtnView(question: $question, answer: $answer, maxValue: trainModeSetting.maxValue)
+                SkipBtnView(question: $question, answer: $answer, settings: settings)
                 ZStack {
                     Rectangle()
                         .stroke(CustomColor.tintColor, lineWidth: 1)
@@ -42,9 +45,17 @@ struct TrainView: View {
         }
         .padding(.horizontal)
         .onAppear {
-            if let setting = TrainModelSetting.decode(data: trainModeData) {
-                trainModeSetting = setting
-                question = MathQuestion(operation: .multiplication, maxValue: setting.maxValue)
+            if let settings = QuestionSettings.decode(data: settingsData) {
+                self.settings = settings
+                if isFirstLoad || settings.hasChanged {
+                    question = MathQuestion()
+                    question.refresh(settings: settings)
+                    isFirstLoad = false
+                    self.settings.hasChanged = false
+                    if let settingsData = self.settings.encode() {
+                        self.settingsData = settingsData
+                    }
+                }
             }
         }
     }

@@ -14,10 +14,10 @@ struct GridRowView: View {
     @Binding
     var answer: String
     
+    let settings: QuestionSettings
+    let length: CGFloat
     let from: Int
     let to: Int
-    let length: CGFloat
-    let maxValue: Int
     
     var body: some View {
         return GridRow {
@@ -27,8 +27,8 @@ struct GridRowView: View {
                         answer = ""
                     }
                     answer += "\(n)"
-                    if answer == question.hiddenValue {
-                        question = MathQuestion(operation: .multiplication, maxValue: maxValue)
+                    if question.checkAnswer(answer) {
+                        question.refresh(settings: settings)
                         answer = ""
                     }
                 } label: {
@@ -43,6 +43,6 @@ struct GridRowView: View {
 
 struct GridRowView_Previews: PreviewProvider {
     static var previews: some View {
-        GridRowView(question: .constant(MathQuestion(operation: .multiplication, maxValue: 10)), answer: .constant("123"), from: 0, to: 0, length: 20, maxValue: 10)
+        GridRowView(question: .constant(MathQuestion()), answer: .constant("123"), settings: QuestionSettings(), length: 20, from: 0, to: 0)
     }
 }

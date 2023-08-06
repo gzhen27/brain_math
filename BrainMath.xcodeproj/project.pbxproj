@@ -18,13 +18,15 @@
 		EB4933982A61D41100D692BA /* GridRowVariantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4933972A61D41100D692BA /* GridRowVariantView.swift */; };
 		EB49339B2A61D4EC00D692BA /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB49339A2A61D4EC00D692BA /* KeyboardView.swift */; };
 		EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4A013F2A60855200B69254 /* MathQuestion.swift */; };
+		EB5795272A7F14E6004CED30 /* BugsTrackList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5795262A7F14E6004CED30 /* BugsTrackList.swift */; };
+		EB9AE0BF2A79E62D0034FDA9 /* SettingComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */; };
 		EBB536722A31475800902BB1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536712A31475800902BB1 /* CustomColor.swift */; };
 		EBB536752A31477100902BB1 /* TabViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536742A31477100902BB1 /* TabViewHelper.swift */; };
 		EBB536782A31524200902BB1 /* UICustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB536772A31524200902BB1 /* UICustomColor.swift */; };
 		EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D52A2C127C00B071D4 /* TrainView.swift */; };
 		EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D72A2C129500B071D4 /* QuestView.swift */; };
 		EBC171DA2A2C12A400B071D4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D92A2C12A400B071D4 /* SettingView.swift */; };
-		EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */; };
+		EBCBBF332A3524FB00DCFDAA /* QuestionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,13 +42,15 @@
 		EB4933972A61D41100D692BA /* GridRowVariantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowVariantView.swift; sourceTree = "<group>"; };
 		EB49339A2A61D4EC00D692BA /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		EB4A013F2A60855200B69254 /* MathQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathQuestion.swift; sourceTree = "<group>"; };
+		EB5795262A7F14E6004CED30 /* BugsTrackList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugsTrackList.swift; sourceTree = "<group>"; };
+		EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingComponentView.swift; sourceTree = "<group>"; };
 		EBB536712A31475800902BB1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		EBB536742A31477100902BB1 /* TabViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewHelper.swift; sourceTree = "<group>"; };
 		EBB536772A31524200902BB1 /* UICustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomColor.swift; sourceTree = "<group>"; };
 		EBC171D52A2C127C00B071D4 /* TrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainView.swift; sourceTree = "<group>"; };
 		EBC171D72A2C129500B071D4 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		EBC171D92A2C12A400B071D4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainModeSetting.swift; sourceTree = "<group>"; };
+		EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 				EB2049BD2A29954F006F816C /* BrainMathApp.swift */,
 				EB2049C12A299551006F816C /* Assets.xcassets */,
 				EB2049C32A299551006F816C /* Preview Content */,
+				EB5795262A7F14E6004CED30 /* BugsTrackList.swift */,
 			);
 			path = BrainMath;
 			sourceTree = "<group>";
@@ -111,6 +116,14 @@
 			path = TrainSubViews;
 			sourceTree = "<group>";
 		};
+		EB9AE0BD2A79E5970034FDA9 /* SettingSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */,
+			);
+			path = SettingSubViews;
+			sourceTree = "<group>";
+		};
 		EBB536702A31472B00902BB1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +144,7 @@
 		EBC171D42A2C0EB300B071D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EB9AE0BD2A79E5970034FDA9 /* SettingSubViews */,
 				EB4933922A61D21600D692BA /* TrainSubViews */,
 				EB2049BF2A29954F006F816C /* HomeView.swift */,
 				EBC171D52A2C127C00B071D4 /* TrainView.swift */,
@@ -143,7 +157,7 @@
 		EBCBBF312A3524D200DCFDAA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EBCBBF322A3524FB00DCFDAA /* TrainModeSetting.swift */,
+				EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */,
 				EB4A013F2A60855200B69254 /* MathQuestion.swift */,
 			);
 			path = Models;
@@ -227,13 +241,15 @@
 				EBC171D62A2C127C00B071D4 /* TrainView.swift in Sources */,
 				EB49338F2A61CD4C00D692BA /* DisplayQuestionView.swift in Sources */,
 				EB2049BE2A29954F006F816C /* BrainMathApp.swift in Sources */,
-				EBCBBF332A3524FB00DCFDAA /* TrainModeSetting.swift in Sources */,
+				EBCBBF332A3524FB00DCFDAA /* QuestionSettings.swift in Sources */,
 				EB4933962A61D31400D692BA /* GridRowView.swift in Sources */,
 				EBB536782A31524200902BB1 /* UICustomColor.swift in Sources */,
 				EB4A01402A60855200B69254 /* MathQuestion.swift in Sources */,
 				EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */,
 				EB49339B2A61D4EC00D692BA /* KeyboardView.swift in Sources */,
+				EB5795272A7F14E6004CED30 /* BugsTrackList.swift in Sources */,
 				EB4933942A61D27800D692BA /* SkipBtnView.swift in Sources */,
+				EB9AE0BF2A79E62D0034FDA9 /* SettingComponentView.swift in Sources */,
 				EB4933912A61D0FA00D692BA /* AnswerInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
