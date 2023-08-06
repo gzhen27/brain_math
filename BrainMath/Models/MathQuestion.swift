@@ -57,6 +57,14 @@ struct MathQuestion {
         }
     }
     
+    func checkAnswer(_ guess: String) -> Bool {
+        if guess == hiddenValue { return true }
+        if operation == .multiplication && hiddenIndex == 0 && second == 0 && answer == 0 { return true }
+        if operation == .multiplication && hiddenIndex == 1 && first == 0 && answer == 0 { return true }
+        if operation == .division && hiddenIndex == 0 && second == 0 && answer == 0 { return true }
+        return false
+    }
+    
     private mutating func updateQuestion(params: Params) {
         self.first = params.first
         self.second = params.second

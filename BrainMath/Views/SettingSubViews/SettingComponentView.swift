@@ -49,7 +49,7 @@ struct SettingComponentView: View {
     private func getStep() -> Int {
         switch selectedOperation {
         case .addition, .subtraction:
-            return 1000
+            return 100
         case .multiplication, .division:
             return 5
         }

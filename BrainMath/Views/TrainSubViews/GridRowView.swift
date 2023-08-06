@@ -27,7 +27,7 @@ struct GridRowView: View {
                         answer = ""
                     }
                     answer += "\(n)"
-                    if answer == question.hiddenValue {
+                    if question.checkAnswer(answer) {
                         question.refresh(settings: settings)
                         answer = ""
                     }

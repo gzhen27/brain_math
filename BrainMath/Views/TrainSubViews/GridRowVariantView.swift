@@ -29,7 +29,7 @@ struct GridRowVariantView: View {
                     case 11:
                         if (answer != "0") {
                             answer += "0"
-                            if answer == question.hiddenValue {
+                            if question.checkAnswer(answer) {
                                 question.refresh(settings: settings)
                                 answer = ""
                             }
