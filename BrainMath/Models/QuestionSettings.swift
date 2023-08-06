@@ -37,4 +37,13 @@ struct QuestionSettings: Codable {
             return nil
         }
     }
+    
+    func currentOperations() -> [MathOperation] {
+        var operations: [MathOperation] = []
+        if isMultiplication { operations.append(.multiplication) }
+        if isDivision { operations.append(.division) }
+        if isAddition { operations.append(.addition) }
+        if isSubstraction { operations.append(.subtraction) }
+        return operations
+    }
 }

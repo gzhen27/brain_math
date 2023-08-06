@@ -20,10 +20,14 @@ struct SettingView: View {
     var body: some View {
         VStack {
             VStack {
-                SettingComponentView(isToggle: $trainModeSetting.isMultiplication, maxValue: $trainModeSetting.multiplicationMax, text: "Multiplication")
-                SettingComponentView(isToggle: $trainModeSetting.isDivision, maxValue: $trainModeSetting.divisionMax, text: "Division")
-                SettingComponentView(isToggle: $trainModeSetting.isAddition, maxValue: $trainModeSetting.additionMax, text: "Addition")
-                SettingComponentView(isToggle: $trainModeSetting.isSubstraction, maxValue: $trainModeSetting.substractionMax, text: "Substraction")
+                SettingComponentView(isToggle: $trainModeSetting.isMultiplication, limit: $trainModeSetting.multiplicationMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .multiplication)
+                SettingComponentView(isToggle: $trainModeSetting.isDivision, limit: $trainModeSetting.divisionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .division)
+                SettingComponentView(isToggle: $trainModeSetting.isAddition, limit: $trainModeSetting.additionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .addition)
+                SettingComponentView(isToggle: $trainModeSetting.isSubstraction, limit: $trainModeSetting.substractionMax, currentOperations
+                                     : trainModeSetting.currentOperations(), selectedOperation: .subtraction)
             }
             Spacer()
             saveBtn

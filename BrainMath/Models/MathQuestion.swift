@@ -83,19 +83,9 @@ extension MathQuestion {
     }
     
     private func getRandomOperation(settings: QuestionSettings) -> MathOperation {
-        let operations = getAllOperations(settings: settings)
+        let operations = settings.currentOperations()
         let index = generateInteger(limit: operations.count-1)
         return operations[index]
-    }
-    
-    private func getAllOperations(settings: QuestionSettings) -> [MathOperation] {
-        var operations: [MathOperation] = []
-        if settings.isMultiplication { operations.append(.multiplication) }
-        if settings.isDivision { operations.append(.division) }
-        if settings.isAddition { operations.append(.addition) }
-        if settings.isSubstraction { operations.append(.subtraction) }
-        //BUG: - to avoid the the operations are all disabled until the bug is fixed.
-        return operations.count > 0 ? operations : [.multiplication]
     }
     
     private func getMaxValue(settings: QuestionSettings, operation: MathOperation) -> Int {

@@ -12,21 +12,23 @@ struct SettingComponentView: View {
     var isToggle: Bool
     
     @Binding
-    var maxValue: Int
+    var limit: Int
     
-    let text: String
+    let currentOperations: [MathOperation]
+    let selectedOperation: MathOperation
     
     var body: some View {
         VStack {
             Toggle(isOn: $isToggle) {
                 HStack(alignment: .center) {
-                    Text(text)
+                    Text(selectedOperation.rawValue)
                         .font(.headline)
                 }
             }
+            .disabled(currentOperations.count == 1 && currentOperations.contains(selectedOperation))
             if isToggle {
-                Stepper(value: $maxValue, in: 5...100, step: 5) {
-                    Text("Max: \(maxValue)")
+                Stepper(value: $limit, in: 5...100, step: 5) {
+                    Text("Limit: \(limit)")
                         .font(.footnote)
                 }
             }
@@ -39,7 +41,7 @@ struct SettingComponentView: View {
 struct SettingComponentView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            SettingComponentView(isToggle: .constant(true), maxValue: .constant(5), text: "Button")
+            SettingComponentView(isToggle: .constant(true), limit: .constant(5), currentOperations: [MathOperation.multiplication], selectedOperation: .multiplication)
         }
         .padding()
     }
