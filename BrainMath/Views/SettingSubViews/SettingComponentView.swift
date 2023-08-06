@@ -27,13 +27,31 @@ struct SettingComponentView: View {
             }
             .disabled(currentOperations.count == 1 && currentOperations.contains(selectedOperation))
             if isToggle {
-                Stepper(value: $limit, in: 5...100, step: 5) {
+                Stepper(value: $limit, in: 5...getMax(), step: getStep()) {
                     Text("Limit: \(limit)")
                         .font(.footnote)
                 }
             }
             Divider()
                 .padding(.horizontal)
+        }
+    }
+    
+    private func getMax() -> Int {
+        switch selectedOperation {
+        case .addition, .subtraction:
+            return 10000
+        case .multiplication, .division:
+            return 100
+        }
+    }
+    
+    private func getStep() -> Int {
+        switch selectedOperation {
+        case .addition, .subtraction:
+            return 1000
+        case .multiplication, .division:
+            return 5
         }
     }
 }
