@@ -50,7 +50,11 @@ struct MathQuestion {
     
     mutating func refresh(settings: QuestionSettings) {
         let params = generateQuestionParams(settings: settings)
-        updateQuestion(params: params)
+        if paramsValidate(params) {
+            updateQuestion(params: params)
+        } else {
+            refresh(settings: settings)
+        }
     }
     
     private mutating func updateQuestion(params: Params) {
@@ -71,6 +75,13 @@ extension MathQuestion {
         let hiddenIndex = generateInteger(limit: 2)
         let answer = generateAnswer(first: first, second: second, operation: operation)
         return Params(first: first, second: second, answer: answer, hiddenIndex: hiddenIndex, operation: operation)
+    }
+    
+    private func paramsValidate(_ params: Params) -> Bool {
+        if params.operation == .division && params.first == 0 {
+            return false
+        }
+        return true
     }
     
     private func generateAnswer(first: Int, second: Int, operation: MathOperation) -> Int {
