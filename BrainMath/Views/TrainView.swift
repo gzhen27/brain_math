@@ -23,24 +23,25 @@ struct TrainView: View {
     @State
     private var isFirstLoad = true
     
+    @State
+    private var isHint = false
+    
     var body: some View {
         GeometryReader { geo in
-            VStack {
-                DisplayQuestionView(question: question)
-                    .padding(.top)
-                AnswerInputView(answer: answer)
-                Text(question.questionDescription)
-                Spacer()
-                KeyboardView(question: $question, answer: $answer, settings: settings, height: geo.size.height*0.4)
-                Spacer()
-                SkipBtnView(question: $question, answer: $answer, settings: settings)
-                ZStack {
-                    Rectangle()
-                        .stroke(CustomColor.tintColor, lineWidth: 1)
-                        .frame(width: 320, height: 50)
-                    Text("Ad placement")
+            ZStack {
+                VStack {
+                    DisplayQuestionView(question: question)
+                        .padding(.top)
+                    AnswerInputView(answer: answer)
+                    Text(question.questionDescription)
+                    Spacer()
+                    KeyboardView(question: $question, answer: $answer, settings: settings, height: geo.size.height*0.4)
+                    Spacer()
+                    SkipBtnView(question: $question, answer: $answer, settings: settings)
+                    BottomBannerAd()
+                    Divider()
                 }
-                Divider()
+                hintsIcon
             }
         }
         .padding(.horizontal)
@@ -57,6 +58,25 @@ struct TrainView: View {
                     }
                 }
             }
+        }
+        .sheet(isPresented: $isHint) {
+            HintsView()
+        }
+    }
+    
+    private var hintsIcon: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button {
+                    isHint.toggle()
+                } label: {
+                    Image(systemName: "\(isHint ? "book" : "book.closed")")
+                        .font(.title2)
+                        .animation(.easeOut, value: isHint)
+                }
+            }
+            Spacer()
         }
     }
 }
