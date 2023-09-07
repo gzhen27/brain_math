@@ -5,7 +5,7 @@
 //  Created by G Zhen on 7/13/23.
 //
 
-import Foundation
+import SwiftUI
 
 struct MathQuestion {
     private(set) var first: Int = 1
@@ -39,13 +39,34 @@ struct MathQuestion {
         }
     }
     
-    var questionDescription: String {
+    // return an array of hints for this question.
+    var questionDescriptions: [String] {
+        generateHints()
+    }
+    
+    func generateHints() -> [String] {
+        var hints: [String] = []
+        
         switch operation {
-        case .addition, .multiplication:
-            return "\(first) \(operation.rawValue) \(second) = \(answer)"
-        case .subtraction, .division:
-            return "\(answer) \(operation.rawValue) \(first) = \(second)"
+        case .addition:
+            hints.append("\(second) \(MathOperation.addition.rawValue) \(first) = \(answer)")
+            hints.append("\(answer) \(MathOperation.subtraction.rawValue) \(first) = \(second)")
+            hints.append("\(answer) \(MathOperation.subtraction.rawValue) \(second) = \(first)")
+        case .subtraction:
+            hints.append("\(first) \(MathOperation.addition.rawValue) \(second) = \(answer)")
+            hints.append("\(second) \(MathOperation.addition.rawValue) \(first) = \(answer)")
+            hints.append("\(answer) \(MathOperation.subtraction.rawValue) \(second) = \(first)")
+        case .multiplication:
+            hints.append("\(second) \(MathOperation.multiplication.rawValue) \(first) = \(answer)")
+            hints.append("\(answer) \(MathOperation.division.rawValue) \(first) = \(second)")
+            hints.append("\(answer) \(MathOperation.division.rawValue) \(second) = \(first)")
+        case .division:
+            hints.append("\(first) \(MathOperation.multiplication.rawValue) \(second) = \(answer)")
+            hints.append("\(second) \(MathOperation.multiplication.rawValue) \(first) = \(answer)")
+            hints.append("\(answer) \(MathOperation.division.rawValue) \(second) = \(first)")
         }
+        
+        return hints
     }
     
     mutating func refresh(settings: QuestionSettings) {

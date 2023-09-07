@@ -33,7 +33,6 @@ struct TrainView: View {
                     DisplayQuestionView(question: question)
                         .padding(.top)
                     AnswerInputView(answer: answer)
-                    Text(question.questionDescription)
                     Spacer()
                     KeyboardView(question: $question, answer: $answer, settings: settings, height: geo.size.height*0.4)
                     Spacer()
@@ -60,7 +59,7 @@ struct TrainView: View {
             }
         }
         .sheet(isPresented: $isHint) {
-            HintsView()
+            HintsView(question: question)
         }
     }
     

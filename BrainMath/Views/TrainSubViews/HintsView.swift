@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct HintsView: View {
+    var question: MathQuestion
+    
     var body: some View {
         VStack {
-            Text("Questions")
+            Text("Hints")
                 .padding(.top)
                 .font(.title)
-            Group {
-                Text("1 \(MathOperation.multiplication.rawValue) 2 = 2")
-                Text("2 \(MathOperation.multiplication.rawValue) 1 = 2")
-                Text("2 \(MathOperation.division.rawValue) 1 = 2")
-                Text("2 \(MathOperation.division.rawValue) 2 = 1")
+            ForEach(question.questionDescriptions.sorted(), id: \.self) { desc in
+                Text(desc)
             }
-            .padding()
+            .padding(8)
             Spacer()
             BottomBannerAd()
         }
@@ -29,6 +28,6 @@ struct HintsView: View {
 
 struct HintsView_Previews: PreviewProvider {
     static var previews: some View {
-        HintsView()
+        HintsView(question: MathQuestion())
     }
 }
