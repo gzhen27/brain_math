@@ -11,23 +11,38 @@ struct SettingView: View {
     @AppStorage("trainModeSetting")
     var trainModeData = QuestionSettings().encode()!
     
+    @AppStorage("questModeSetting")
+    var questModeData = QuestionSettings().encode()!
+    
     @State
     private var trainModeSetting = QuestionSettings()
     
     @State
+    private var questModeSetting = QuestionSettings()
+    
+    @State
     private var showError = false
+    
+    @State
+    private var settingType = "train"
     
     var body: some View {
         VStack {
-            VStack {
-                SettingComponentView(isToggle: $trainModeSetting.isMultiplication, limit: $trainModeSetting.multiplicationMax, currentOperations
-                                     : trainModeSetting.currentOperations(), selectedOperation: .multiplication)
-                SettingComponentView(isToggle: $trainModeSetting.isDivision, limit: $trainModeSetting.divisionMax, currentOperations
-                                     : trainModeSetting.currentOperations(), selectedOperation: .division)
-                SettingComponentView(isToggle: $trainModeSetting.isAddition, limit: $trainModeSetting.additionMax, currentOperations
-                                     : trainModeSetting.currentOperations(), selectedOperation: .addition)
-                SettingComponentView(isToggle: $trainModeSetting.isSubstraction, limit: $trainModeSetting.substractionMax, currentOperations
-                                     : trainModeSetting.currentOperations(), selectedOperation: .subtraction)
+            Picker("", selection: $settingType) {
+                Text("Train").tag("train")
+                Text("Quest").tag("quest")
+            }
+            .pickerStyle(.segmented)
+            .padding()
+            
+            if settingType == "train" {
+                SettingWidgetsView(settings: $trainModeSetting)
+                .padding()
+            }
+            
+            if settingType == "quest" {
+                SettingWidgetsView(settings: $questModeSetting)
+                .padding()
             }
             Spacer()
             saveBtn
@@ -37,9 +52,13 @@ struct SettingView: View {
             if let setting = QuestionSettings.decode(data: trainModeData) {
                 trainModeSetting = setting
             }
+            
+            if let setting = QuestionSettings.decode(data: questModeData) {
+                questModeSetting = setting
+            }
         }
         .alert("Error", isPresented: $showError, actions: {}) {
-            Text("Failed to save the settings, please try again")
+            Text("Failed to save your changes, please try again")
         }
     }
     
@@ -49,6 +68,15 @@ struct SettingView: View {
             if let settingData = trainModeSetting.encode() {
                 trainModeData = settingData
             } else {
+                trainModeSetting.hasChanged = false
+                showError = true
+            }
+            
+            questModeSetting.hasChanged = true
+            if let settingData = questModeSetting.encode() {
+                questModeData = settingData
+            } else {
+                questModeSetting.hasChanged = false
                 showError = true
             }
         } label: {

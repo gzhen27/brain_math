@@ -33,7 +33,6 @@ struct SettingComponentView: View {
                 }
             }
             Divider()
-                .padding(.horizontal)
         }
     }
     

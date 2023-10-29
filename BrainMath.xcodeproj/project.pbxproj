@@ -29,6 +29,7 @@
 		EBC171D82A2C129500B071D4 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D72A2C129500B071D4 /* QuestView.swift */; };
 		EBC171DA2A2C12A400B071D4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC171D92A2C12A400B071D4 /* SettingView.swift */; };
 		EBCBBF332A3524FB00DCFDAA /* QuestionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */; };
+		EBE628A22AEDD5E70031C0D2 /* SettingWidgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE628A12AEDD5E70031C0D2 /* SettingWidgetsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		EBC171D72A2C129500B071D4 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
 		EBC171D92A2C12A400B071D4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		EBCBBF322A3524FB00DCFDAA /* QuestionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSettings.swift; sourceTree = "<group>"; };
+		EBE628A12AEDD5E70031C0D2 /* SettingWidgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWidgetsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				EB9AE0BE2A79E62D0034FDA9 /* SettingComponentView.swift */,
+				EBE628A12AEDD5E70031C0D2 /* SettingWidgetsView.swift */,
 			);
 			path = SettingSubViews;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				EB49339B2A61D4EC00D692BA /* KeyboardView.swift in Sources */,
 				EB5795272A7F14E6004CED30 /* BugsTrackList.swift in Sources */,
 				EB4933942A61D27800D692BA /* SkipBtnView.swift in Sources */,
+				EBE628A22AEDD5E70031C0D2 /* SettingWidgetsView.swift in Sources */,
 				EB9AE0BF2A79E62D0034FDA9 /* SettingComponentView.swift in Sources */,
 				EB4933912A61D0FA00D692BA /* AnswerInputView.swift in Sources */,
 			);
